@@ -276,7 +276,7 @@ if (isset($_POST['ddt'])) { //conferma dell'evasione di un ddt
                   $row_descri['descri'] = "da Conferma d'Ordine n.".$v['numdoc']." del ".substr($v['datemi'],8,2)."-".substr($v['datemi'],5,2)."-".substr($v['datemi'],0,4);
                   $row_descri['id_tes'] = $last_id;
                   $row_descri['tiprig'] = 2;
-                  rigdocInsert($row_descri);
+                  //rigdocInsert($row_descri);
                }
                if (isset($v['checkval'])) {   //se e' un rigo selezionato
                    //lo inserisco nel DdT
@@ -590,7 +590,7 @@ if (isset($_POST['ddt'])) { //conferma dell'evasione di un ddt
                   $row_descri['descri'] = "da Conferma d'Ordine n.".$v['numdoc']." del ".substr($v['datemi'],8,2)."-".substr($v['datemi'],5,2)."-".substr($v['datemi'],0,4);
                   $row_descri['id_tes'] = $last_id;
                   $row_descri['tiprig'] = 2;
-                  rigdocInsert($row_descri);
+                  //rigdocInsert($row_descri);
                }
                if (isset($v['checkval'])) {   //se e' un rigo selezionato
                    //lo inserisco nella fattura immediata
