@@ -2,8 +2,8 @@
 di Antonio de Vincentiis
 
 > ## Installazione su Synology
-Eliminazione file '.htaccess'
-Configurare connessione al database in 'config/config/gconfig.php'
+Eliminazione file '.htaccess' <br/>
+Configurare connessione al database in 'config/config/gconfig.php' <br/>
 Dare i permessi ai file:
 ```
 chmod 777 data/files/
