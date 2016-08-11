@@ -52,7 +52,19 @@ if (isset($_SESSION['print_request'])) {
             echo "<script type=\"text/javascript\">\n";
             $_SESSION['script_ref'] = $_SERVER['HTTP_REFERER'];
             echo "setTimeout(\"window.location='stampa_docven.php?id_tes=".$documento['id_tes'].$template."'\",1000)\n";
+            
+            if($documento['tipdoc'] == 'DDT')			// se DDT torna a DDT
+            	echo "setTimeout(\"window.location='/gazie/modules/vendit/report_doctra.php'\",5000)\n";
+            else										// altrimenti torna a Fatture
+            	echo "setTimeout(\"window.location='/gazie/modules/vendit/report_docven.php'\",5000)\n";
+            	
             echo "</script></HEAD>\n<BODY><DIV align=\"center\">Wait for PDF</DIV><DIV align=\"center\">Aspetta il PDF</DIV></BODY></HTML>";
+            
+            if($documento['tipdoc'] == 'DDT')			// se DDT torna a DDT
+          		echo "<a href=\"/gazie/modules/vendit/report_doctra.php\"><button><< Documenti di Trasposto</button></a>";
+          	else										// altrimenti torna a Fatture
+          		echo "<a href=\"/gazie/modules/vendit/report_docven.php\"><button><< Fatture</button></a>";
+          		
          } else {
             header("Location:docume_vendit.php");
             exit;
