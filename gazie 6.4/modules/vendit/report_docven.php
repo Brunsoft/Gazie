@@ -117,6 +117,15 @@ function confirMail(link){
    $.fx.speeds._default = 500;
    targetUrl = $("#doc"+tes_id).attr("url");
    //alert (targetUrl);
+   
+   var body_message = \'In allegato quanto in oggetto.\';
+   var email = $("#doc"+tes_id).attr("mail");
+   var subject = $("#doc"+tes_id).attr("namedoc");
+   var mailto_link = \'mailto:\' + email + \'?subject=\' + subject + \'&body=\' + body_message;
+   win = window.open(mailto_link, \'emailWindow\');
+   if (win && win.open && !win.closed) 
+   		win.close();
+   		
    $("p#mail_adrs").html($("#doc"+tes_id).attr("mail"));
    $("p#mail_attc").html($("#doc"+tes_id).attr("namedoc"));
    $( "#dialog" ).dialog({
@@ -132,7 +141,7 @@ function confirMail(link){
                       }
                   }
          });
-   $("#dialog" ).dialog( "open" );
+   //$("#dialog" ).dialog( "open" );
 }
 
 
