@@ -39,7 +39,9 @@ if (isset($_SESSION['print_request'])){
         } else {
             echo "setTimeout(\"window.location='stampa_ordcli.php?id_tes=".$documento['id_tes']."'\",1000)\n";
         }
+        echo "setTimeout(\"window.location='/gazie/modules/vendit/report_broven.php?auxil=VPR'\",5000)\n";
         echo "</script></HEAD>\n<BODY><DIV align=\"center\">Wait for PDF</DIV><DIV align=\"center\">Aspetta il PDF</DIV></BODY></HTML>";
+        echo "<a href=\"/gazie/modules/vendit/report_broven.php?auxil=VPR\"><button><< Preventivi</button></a>";
     } else {
         header("Location:docume_vendit.php");
         exit;
