@@ -125,8 +125,10 @@ if (isset($_POST['Insert']) || isset($_POST['Update'])) {   //se non e' il primo
        if (!($form['codfis']=="") && !($form['codfis']=="00000000000")) {
           $partner_with_same_cf=$anagrafica->queryPartners('*',  "codice <> ".$real_code." AND codice BETWEEN ".$admin_aziend['mascli']."000000 AND ".$admin_aziend['mascli']."999999 AND codfis = '".$form['codfis']."'","codfis DESC",0,1);
           if ($partner_with_same_cf) { // c'è già un cliente sul piano dei conti
-              if ($partner_with_same_cf[0]['fe_cod_univoco'] == $form['fe_cod_univoco']) { // c'è già un cliente sul piano dei conti ed è anche lo stesso ufficio ( amministrativo della PA )
-                  $msg .= "12+";
+              if ($partner_with_same_cf[0]['fe_cod_univoco'] == $form['fe_cod_univoco']) { 
+              // c'è già un cliente sul piano dei conti ed è anche lo stesso ufficio ( amministrativo della PA )
+            	if($_POST['doubleCodfis'] != "1")
+                	$msg .= "12+";
               }
           } elseif ($form['id_anagra']==0) { // è un nuovo cliente senza anagrafica
              $rs_anagra_with_same_cf=gaz_dbi_dyn_query('*',$gTables['anagra']," codfis = '".$form['codfis']."'","codfis DESC",0,1);
@@ -388,7 +390,8 @@ echo "</tr>\n";
 echo "<tr>\n";
 echo "\t<td class=\"FacetFieldCaptionTD\">".$script_transl['codfis']." *</td>\n";
 echo "\t<td class=\"FacetDataTD\" colspan=\"2\">
-      <input type=\"text\" name=\"codfis\" value=\"".$form['codfis']."\" align=\"right\" maxlength=\"16\" size=\"20\" /></td>\n";
+      <input type=\"text\" name=\"codfis\" value=\"".$form['codfis']."\" align=\"right\" maxlength=\"16\" size=\"20\" />";
+echo " Inibisci controllo Codice Fiscale <input type=\"checkbox\" name=\"doubleCodfis\" value=\"1\"></td>\n";
 echo "</tr>\n";
 echo "<tr>\n";
 echo "\t<td class=\"FacetFieldCaptionTD\">".$script_transl['pariva']." </td>\n";
