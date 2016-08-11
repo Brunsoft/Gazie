@@ -1,4 +1,4 @@
-# Gazie Gestore Aziendale 
+# Gazie - Gestore Aziendale 
 di Antonio de Vincentiis
 
 > ## Installazione su Synology
