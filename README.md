@@ -4,7 +4,7 @@ di Antonio de Vincentiis
 > ## Installazione su Synology
 * Eliminazione file '.htaccess'
 * Configurare connessione al database in 'config/config/gconfig.php'
-* Dare i permessi ai file:
+* Dare i permessi ai file tramite SSH. La directory web si trova in /volume/web/:
 ```
 chmod 777 data/files/
 chmod 777 library/tcpdf/cache/
