@@ -9,7 +9,7 @@ di Antonio de Vincentiis
 chmod 777 data/files/
 chmod 777 library/tcpdf/cache/
 ```
-* Per scrivere Fatture / Preventivi contenenti numerosi articoli e si vogliono evitare errori aggiungere la seguente regola nel file 'php.ini' del server (1000 rappresenta il valore di default, inserire quindi un valor a piacimento):
+* Per scrivere Fatture / Preventivi contenenti numerosi articoli e si vogliono evitare errori aggiungere la seguente regola nel file 'php.ini' del server (1000 rappresenta il valore di default, inserire quindi un valore a piacimento):
 ```
 suhosin.request.max_vars = 1000
 suhosin.post.max_vars = 1000
